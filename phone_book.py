@@ -19,7 +19,7 @@ while True:
         try:
             con = sqlite3.connect('Phone.db')
             cur = con.cursor()
-            i_d = input('ID:')
+            i_d = int(input('ID:'))
             username = input('Username:')
             phone = input('Phone number:')
             data = i_d,username,phone
@@ -34,6 +34,8 @@ while True:
             con.close()
         except sqlite3.IntegrityError:
             print('plase select another id this id available')
+        except ValueError:
+            print('Enter a number for id you can't enter a string')
     else:
         # show save
         if get == '2':
