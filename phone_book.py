@@ -35,7 +35,7 @@ while True:
         except sqlite3.IntegrityError:
             print('plase select another id this id available')
         except ValueError:
-            print('Enter a number for id you can't enter a string')
+            print("Enter a number for id you can't enter a string")
     else:
         # show save
         if get == '2':
